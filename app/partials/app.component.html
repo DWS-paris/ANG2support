@@ -1,16 +1,30 @@
-<h1>{{title}}</h1>
-<h2>{{text}}</h2>
+<header>
+    <h1>{{title}}</h1>
+    <h2>{{text}}</h2>
+</header>
 
 <main>
-    <!-- Faire une boucle sur le jeu de données : à propos du *ngFor https://goo.gl/HGcdt5 -->
-    <article *ngFor="let student of studentsList">
-        <p>{{student.firstName}} {{student.lastName}}</p>
+    <!-- Modification du template -->
+    <section *ngIf="selectedStudent">
+        <h3>{{edit}} {{selectedStudent.firstName}} {{selectedStudent.lastName}}</h3>
+        <ul>
+            <!-- Utilisation du ngModel : à propos de ngModel https://goo.gl/i7hAq6 -->
+            <li>{{firstName}} <input [(ngModel)]="selectedStudent.firstName"/></li>
+            <li>{{lastName}} <input [(ngModel)]="selectedStudent.lastName"/></li>
+
+        </ul>
+    </section>
+    
+    <section *ngFor="let student of studentsList" >
+        <h3>{{student.firstName}} {{student.lastName}}</h3>
+
+        <!-- Binding de l'événement clic : à propos du binding https://goo.gl/GDr3rl -->
+        <button (click)="onSelect(student)">{{editBtn}}</button>
 
         <aside>
-            <!-- Affichage conditionnel : à propos du *ngIf https://goo.gl/7A9B2N -->
-            <em *ngIf="student.state == 1">{{state1}}</em>
-            <em *ngIf="student.state == 2">{{state2}}</em>
-            <em *ngIf="student.state == 3">{{state3}}</em>
+            <p *ngIf="student.state == 1">{{state1}}</p>
+            <p *ngIf="student.state == 2">{{state2}}</p>
+            <p *ngIf="student.state == 3">{{state3}}</p>
         </aside>
-    </article>
+    </section>
 </main>
