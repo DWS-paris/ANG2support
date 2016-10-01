@@ -1,4 +1,3 @@
-// A propos des composants : https://goo.gl/2jsnYz
 "use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -9,22 +8,21 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-// Importer la class Component pour créer un composant
 var core_1 = require('@angular/core');
-// Création du Component
 var AppComponent = (function () {
     function AppComponent() {
+        // Envoyer des variables dans la vue : à propos des variables https://goo.gl/UGMdDh
+        this.title = 'Student Platform';
+        this.text = 'Hello Angular2';
     }
     AppComponent = __decorate([
         core_1.Component({
             // Définition du selector
             selector: 'my-app',
-            // Définition du template du Component
-            // Pour écrire en milti-ligne il faut utiliser l'apostrophe inversée : `
-            template: "\n        <h1>Student Platform</h1>\n        <h2>Hello Angular2</h2>\n    ",
-            // Définition des styles du Component
-            // Pour écrire en milti-ligne il faut utiliser l'apostrophe inversée : `
-            styles: ["\n        h1 {color: red}\n        h2 {text-transform: uppercase; font-size:1rem}\n    "]
+            // Créer un fichier de template : à propos des templates https://goo.gl/7xYY66
+            templateUrl: 'app/partials/app.component.html',
+            // Créer un fichier de styles : à propos des styles : https://goo.gl/jTkmZA
+            styleUrls: ['app/styles/app.component.css']
         }), 
         __metadata('design:paramtypes', [])
     ], AppComponent);
