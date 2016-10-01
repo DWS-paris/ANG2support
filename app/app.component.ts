@@ -13,10 +13,10 @@ export class AppComponent {
     private state2 = 'Etudiant en retard';
     private state3 = 'Etudiant absent';
 
-    // Création d'une variable pour array
+    // Création d'une variable pour le jeu de donnée
     private studentsList: [any];
 
-    // Création d'un constructor pour envoyer un tableau de données dans la vue
+    // Création d'un constructor pour envoyer le jeu de données dans la vue
     constructor(){
         // Création du jeu de données
         this.studentsList = [
