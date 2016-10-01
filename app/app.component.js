@@ -9,15 +9,27 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+// Création d'un type d'objet (constructeur)
+var Student = (function () {
+    function Student() {
+    }
+    return Student;
+}());
+exports.Student = Student;
 var AppComponent = (function () {
     function AppComponent() {
         // Envoyer des variables dans la vue : à propos des variables https://goo.gl/UGMdDh
         this.title = 'Student Platform';
-        this.text = 'Hello Angular2';
+        this.text = 'Liste des étudiants';
+        this.edit = 'Editer le prénom de l\'étudiant';
+        // Création d'un objet utilisant un constructeur
+        this.student = {
+            id: 0,
+            firstName: 'Pierre'
+        };
     }
     AppComponent = __decorate([
         core_1.Component({
-            // Définition du selector
             selector: 'my-app',
             // Créer un fichier de template : à propos des templates https://goo.gl/7xYY66
             templateUrl: 'app/partials/app.component.html',

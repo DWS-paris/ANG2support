@@ -1,6 +1,14 @@
-<!-- 
-    Le template du component contient toutes les balises HTML
-    Les variables sont intégrer entre double accolades
--->
-<h1>{{title}}</h1>
-<h2>{{text}}</h2>
+<!-- Le template du component contient toutes les balises HTML -->
+<header>
+    <!-- Affichage d'un variable -->
+    <h1>{{title}}</h1>
+    <h2>{{text}}</h2>
+</header>
+
+<main>
+    <!-- Affichage des propriétés d'un objet -->
+    <h3><b>{{student.id}}</b> {{student.firstName}}</h3>
+
+    <!-- Utilisation d'un ngModel -->
+    <p>{{edit}} <input [(ngModel)]="student.firstName"></p>
+</main>
