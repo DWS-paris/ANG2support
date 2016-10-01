@@ -6,7 +6,6 @@ import { Component } from '@angular/core';
     styleUrls: ['app/styles/app.component.css']
 })
 
-// Exporter la class du Component
 export class AppComponent {
     private title = 'Student Platform';
     private text = 'Liste des étudiants';
