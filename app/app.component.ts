@@ -30,11 +30,8 @@ export class AppComponent {
     firstName = 'Prénom :';
     lastName = 'Nom :';
     studentsList = STUDENTS;
-
-    // Création d'un varialbe pour le ngModel : à propos de ngModel https://goo.gl/i7hAq6 
     selectedStudent: Student;
 
-    // Création d'un fonction disponible dans la vue : à propos du binding https://goo.gl/GDr3rl
     onSelect(student: Student): void {
         this.selectedStudent = student;
     }

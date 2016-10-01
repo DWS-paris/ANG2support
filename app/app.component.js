@@ -33,7 +33,6 @@ var AppComponent = (function () {
         this.lastName = 'Nom :';
         this.studentsList = STUDENTS;
     }
-    // Création d'un fonction disponible dans la vue : à propos du binding https://goo.gl/GDr3rl
     AppComponent.prototype.onSelect = function (student) {
         this.selectedStudent = student;
     };
