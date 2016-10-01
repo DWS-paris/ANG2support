@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 // Importer la config : à propos du fichier de configuration https://goo.gl/uMHHY1
 import { Config } from './config';
 
-// Importer le model dans le composant : à propos des models https://goo.gl/DsFwMk
+// Importer le model de données dans le composant : à propos des models https://goo.gl/DsFwMk
 import { StudentItem } from "./models/student.item";
 
 
@@ -19,8 +19,7 @@ export class AppComponent {
     title = Config.APP_TITLE;
     text = Config.APP_SS_TITLE;
     state = Config.STATE;
-    edit = Config.EDIT;
-
+    
     // Utilisation du model de données
     selectedStudent: StudentItem;
     newStudent: StudentItem;

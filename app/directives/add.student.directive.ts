@@ -2,7 +2,7 @@
 import {Component, Input, Output, EventEmitter} from "@angular/core";
 
 import { Config } from '../config';
-import {StudentItem} from "../models/student.item";
+import { StudentItem } from "../models/student.item";
 
 // Configuration de la directive
 @Component({
@@ -15,6 +15,8 @@ export class AddStudentDirective {
     add = Config.ADD;
     firstName = Config.FIRSTNAME;
     lastName = Config.LASTNAME;
+
+    selectedStudent: StudentItem;
     
     // L’utilisation de la fonction de la class Input permet de recevoir dans la directive les données d’un autre composant.
     @Input() newStudent: StudentItem;

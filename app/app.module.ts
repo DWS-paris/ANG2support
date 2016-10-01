@@ -4,15 +4,16 @@ import { FormsModule }   from '@angular/forms';
 
 import { AppComponent }  from './app.component';
 
-// Import de la directive : à propos des directives https://goo.gl/fGh7QS 
+// Import des directives : à propos des directives https://goo.gl/fGh7QS 
 import { AddStudentDirective } from "./directives/add.student.directive";
+import { EditStudentDirective } from "./directives/edit.student.directive";
 import { StudentDirective } from "./directives/student.details.directive";
 
 @NgModule({
   imports: [ BrowserModule, FormsModule ],
 
-  // Ajout de la directive dans le tableau des déclarations
-  declarations: [ AppComponent, AddStudentDirective, StudentDirective ],
+  // Ajout des directives dans le tableau des déclarations
+  declarations: [ AppComponent, AddStudentDirective, EditStudentDirective, StudentDirective ],
 
   bootstrap: [ AppComponent ]
 })

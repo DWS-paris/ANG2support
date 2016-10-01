@@ -11,7 +11,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 // Importer la config : à propos du fichier de configuration https://goo.gl/uMHHY1
 var config_1 = require('./config');
-// Importer le model dans le composant : à propos des models https://goo.gl/DsFwMk
+// Importer le model de données dans le composant : à propos des models https://goo.gl/DsFwMk
 var student_item_1 = require("./models/student.item");
 var AppComponent = (function () {
     function AppComponent() {
@@ -19,7 +19,6 @@ var AppComponent = (function () {
         this.title = config_1.Config.APP_TITLE;
         this.text = config_1.Config.APP_SS_TITLE;
         this.state = config_1.Config.STATE;
-        this.edit = config_1.Config.EDIT;
         this.resetInput();
         // Définition d'une collection de données utilisant le model/constructor
         this.studentsList = [
