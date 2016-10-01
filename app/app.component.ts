@@ -1,31 +1,29 @@
 import { Component } from '@angular/core';
-
-// Importer la config : à propos du fichier de configuration https://goo.gl/uMHHY1
 import { Config } from './config';
-
-// Importer le model de données dans le composant : à propos des models https://goo.gl/DsFwMk
 import { StudentItem } from "./models/student.item";
+
+// Import du service dans l'application : à propos des services https://goo.gl/uz1cpM
+import {StudentService} from "./services/students.service";
 
 
 @Component({
     selector: 'my-app',
     templateUrl: 'app/partials/app.component.html',
     styleUrls: ['app/styles/app.component.css'],
+
+    // Configuration du provider pour utiliser le service
+    providers: [StudentService],
 })
 
 export class AppComponent {
-    
-    // Utilisation des constantes
     title = Config.APP_TITLE;
     text = Config.APP_SS_TITLE;
     state = Config.STATE;
-    
-    // Utilisation du model de données
     selectedStudent: StudentItem;
     newStudent: StudentItem;
 
-    // Création d'une variable pour uriliser un model de données
-    studentsList: [any];
+    // Configuration de la variable de la liste
+    studentsList: StudentItem[];
 
     onSelect(student: StudentItem){
         this.selectedStudent = student;
@@ -40,17 +38,11 @@ export class AppComponent {
         this.newStudent = {id: 0, firstName: '', lastName: '', state: 1}
     }
 
-    constructor(){
+    // Ajout du service dans le constructor
+    constructor( private studentService: StudentService ){
         this.resetInput();
-
-        // Définition d'une collection de données utilisant le model/constructor
-        this.studentsList = [
-            new StudentItem({id: 0, firstName: 'Pierre', lastName: 'Stone', state: 2}),
-            new StudentItem({id: 1, firstName: 'Sophie', lastName: 'Bourdon', state: 3}),
-            new StudentItem({id: 2, firstName: 'Jacques', lastName: 'Rakchy', state: 2}),
-            new StudentItem({id: 3, firstName: 'Julie', lastName: 'Bicoule', state: 1}),
-            new StudentItem({id: 4, firstName: 'Charles', lastName: 'Violon', state: 1}),
-            new StudentItem({id: 5, firstName: 'Claire', lastName: 'Obscure', state: 1}),
-        ]
+        
+        // Création de la liste en appelant la fonction du service
+        this.studentsList = this.studentService.getStudents();
     };
  }

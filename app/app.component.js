@@ -9,26 +9,19 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-// Importer la config : à propos du fichier de configuration https://goo.gl/uMHHY1
 var config_1 = require('./config');
-// Importer le model de données dans le composant : à propos des models https://goo.gl/DsFwMk
-var student_item_1 = require("./models/student.item");
+// Import du service dans l'application : à propos des services https://goo.gl/uz1cpM
+var students_service_1 = require("./services/students.service");
 var AppComponent = (function () {
-    function AppComponent() {
-        // Utilisation des constantes
+    // Ajout du service dans le constructor
+    function AppComponent(studentService) {
+        this.studentService = studentService;
         this.title = config_1.Config.APP_TITLE;
         this.text = config_1.Config.APP_SS_TITLE;
         this.state = config_1.Config.STATE;
         this.resetInput();
-        // Définition d'une collection de données utilisant le model/constructor
-        this.studentsList = [
-            new student_item_1.StudentItem({ id: 0, firstName: 'Pierre', lastName: 'Stone', state: 2 }),
-            new student_item_1.StudentItem({ id: 1, firstName: 'Sophie', lastName: 'Bourdon', state: 3 }),
-            new student_item_1.StudentItem({ id: 2, firstName: 'Jacques', lastName: 'Rakchy', state: 2 }),
-            new student_item_1.StudentItem({ id: 3, firstName: 'Julie', lastName: 'Bicoule', state: 1 }),
-            new student_item_1.StudentItem({ id: 4, firstName: 'Charles', lastName: 'Violon', state: 1 }),
-            new student_item_1.StudentItem({ id: 5, firstName: 'Claire', lastName: 'Obscure', state: 1 }),
-        ];
+        // Création de la liste en appelant la fonction du service
+        this.studentsList = this.studentService.getStudents();
     }
     AppComponent.prototype.onSelect = function (student) {
         this.selectedStudent = student;
@@ -48,8 +41,10 @@ var AppComponent = (function () {
             selector: 'my-app',
             templateUrl: 'app/partials/app.component.html',
             styleUrls: ['app/styles/app.component.css'],
+            // Configuration du provider pour utiliser le service
+            providers: [students_service_1.StudentService],
         }), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [students_service_1.StudentService])
     ], AppComponent);
     return AppComponent;
 }());
