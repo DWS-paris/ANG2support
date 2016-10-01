@@ -5,10 +5,10 @@
 
 <main>
     <section>
-        <input [(ngModel)]="newStudent.firstName" placeholder="{{firstName}}">
-        <input [(ngModel)]="newStudent.lastName" placeholder="{{lastName}}">
-        <input [(ngModel)]="newStudent.state" placeholder="{{state}}">
-        <button (click)="addNewObject()">{{add}}</button>
+
+        <!-- Ajout de la directive add-student : à propos des directives https://goo.gl/fGh7QS  -->
+        <add-student [newStudent]="newStudent" (sendNewStudentData)="addNewStudent($event)"></add-student>
+
     </section>
 
     <section *ngIf="selectedStudent">
@@ -20,12 +20,9 @@
     </section>
     
     <section *ngFor="let student of studentsList" >
-        <h3>{{student.firstName}} {{student.lastName}}</h3>
-        <button (click)="onSelect(student)">{{editBtn}}</button>
-        <aside>
-            <p *ngIf="student.state == 1">{{state1}}</p>
-            <p *ngIf="student.state == 2">{{state2}}</p>
-            <p *ngIf="student.state == 3">{{state3}}</p>
-        </aside>
+        
+        <!-- Ajout de la directive student-item  -->
+        <student-item [student]="student" (sendStudentDetail)="onSelect($event)"></student-item>
+        
     </section>
 </main>

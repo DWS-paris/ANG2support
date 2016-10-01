@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 // Importer la config : à propos du fichier de configuration https://goo.gl/uMHHY1
-import { Config } from './config'
+import { Config } from './config';
 
 // Importer le model dans le composant : à propos des models https://goo.gl/DsFwMk
 import { StudentItem } from "./models/student.item";
@@ -18,12 +18,8 @@ export class AppComponent {
     // Utilisation des constantes
     title = Config.APP_TITLE;
     text = Config.APP_SS_TITLE;
-    editBtn = Config.EDIT_BTN;
-    edit = Config.EDIT;
     state = Config.STATE;
-    add = Config.ADD;
-    firstName = Config.FIRSTNAME;
-    lastName = Config.LASTNAME;
+    edit = Config.EDIT;
 
     // Utilisation du model de données
     selectedStudent: StudentItem;
@@ -32,11 +28,11 @@ export class AppComponent {
     // Création d'une variable pour uriliser un model de données
     studentsList: [any];
 
-    onSelect(student: StudentItem): void {
+    onSelect(student: StudentItem){
         this.selectedStudent = student;
-    }
+    };
     
-    addNewObject(){
+    addNewStudent(){
         this.studentsList.push(this.newStudent);
         this.resetInput();
     };

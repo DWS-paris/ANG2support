@@ -12,13 +12,17 @@ var core_1 = require('@angular/core');
 var platform_browser_1 = require('@angular/platform-browser');
 var forms_1 = require('@angular/forms');
 var app_component_1 = require('./app.component');
+// Import de la directive : à propos des directives https://goo.gl/fGh7QS 
+var add_student_directive_1 = require("./directives/add.student.directive");
+var student_details_directive_1 = require("./directives/student.details.directive");
 var AppModule = (function () {
     function AppModule() {
     }
     AppModule = __decorate([
         core_1.NgModule({
             imports: [platform_browser_1.BrowserModule, forms_1.FormsModule],
-            declarations: [app_component_1.AppComponent],
+            // Ajout de la directive dans le tableau des déclarations
+            declarations: [app_component_1.AppComponent, add_student_directive_1.AddStudentDirective, student_details_directive_1.StudentDirective],
             bootstrap: [app_component_1.AppComponent]
         }), 
         __metadata('design:paramtypes', [])

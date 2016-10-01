@@ -18,12 +18,8 @@ var AppComponent = (function () {
         // Utilisation des constantes
         this.title = config_1.Config.APP_TITLE;
         this.text = config_1.Config.APP_SS_TITLE;
-        this.editBtn = config_1.Config.EDIT_BTN;
-        this.edit = config_1.Config.EDIT;
         this.state = config_1.Config.STATE;
-        this.add = config_1.Config.ADD;
-        this.firstName = config_1.Config.FIRSTNAME;
-        this.lastName = config_1.Config.LASTNAME;
+        this.edit = config_1.Config.EDIT;
         this.resetInput();
         // Définition d'une collection de données utilisant le model/constructor
         this.studentsList = [
@@ -38,7 +34,8 @@ var AppComponent = (function () {
     AppComponent.prototype.onSelect = function (student) {
         this.selectedStudent = student;
     };
-    AppComponent.prototype.addNewObject = function () {
+    ;
+    AppComponent.prototype.addNewStudent = function () {
         this.studentsList.push(this.newStudent);
         this.resetInput();
     };

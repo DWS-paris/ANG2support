@@ -1,0 +1,7 @@
+<h3>{{student.firstName}} {{student.lastName}}</h3>
+<button (click)="onSelect(student)">{{editBtn}}</button>
+<aside>
+    <p *ngIf="student.state == 1">{{state1}}</p>
+    <p *ngIf="student.state == 2">{{state2}}</p>
+    <p *ngIf="student.state == 3">{{state3}}</p>
+</aside>
