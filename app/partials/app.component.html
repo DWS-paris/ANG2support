@@ -4,7 +4,18 @@
 </header>
 
 <main>
-    <!-- Modification du template -->
+    <!-- Section pour ajouter un étudiant -->
+    <section>
+        <!-- Binding d'un ngModel : à propos de ngModel et du binding https://goo.gl/HbLZ5E -->
+        <input [(ngModel)]="newStudent.firstName" placeholder="{{firstName}}">
+        <input [(ngModel)]="newStudent.lastName" placeholder="{{lastName}}">
+        <input [(ngModel)]="newStudent.state" placeholder="{{state}}">
+
+        <!-- Binding de l'événement clic : à propos du binding https://goo.gl/GDr3rl -->
+        <button (click)="addNewObject()">{{add}}</button>
+    </section>
+
+    <!-- Section pour modifier une fiche étudiant -->
     <section *ngIf="selectedStudent">
         <h3>{{edit}} {{selectedStudent.firstName}} {{selectedStudent.lastName}}</h3>
         <ul>
@@ -18,7 +29,7 @@
     <section *ngFor="let student of studentsList" >
         <h3>{{student.firstName}} {{student.lastName}}</h3>
 
-        <!-- Binding de l'événement clic : à propos du binding https://goo.gl/GDr3rl -->
+        <!-- Binding de l'événement click -->
         <button (click)="onSelect(student)">{{editBtn}}</button>
 
         <aside>

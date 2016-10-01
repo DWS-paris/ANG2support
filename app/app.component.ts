@@ -27,15 +27,34 @@ export class AppComponent {
     text = 'Liste des étudiants';
     editBtn = 'Modifier';
     edit = 'Editer : ';
+    state = 'Etat : ';
+    add = 'Ajouter';
     firstName = 'Prénom :';
     lastName = 'Nom :';
     studentsList = STUDENTS;
 
-    // Création d'un varialbe pour le ngModel : à propos de ngModel https://goo.gl/i7hAq6 
+    // Création de varialbes pour les ngModel : à propos de ngModel https://goo.gl/i7hAq6 
     selectedStudent: Student;
+    newStudent: Student;
 
     // Création d'un fonction disponible dans la vue : à propos du binding https://goo.gl/GDr3rl
     onSelect(student: Student): void {
         this.selectedStudent = student;
     }
+    
+    // Fonction pour ajouter un nouvel objet à la collection de données
+    addNewObject(){
+        this.studentsList.push(this.newStudent);
+        this.resetInput();
+    };
+
+     // Création d'une fonction pour vider les input
+    resetInput(){
+        this.newStudent = {id: 0, firstName: '', lastName: '', state: 1}
+    }
+
+    constructor(){
+        // Appel de la fonction resetInput() pour initialier les inputs au chargement
+        this.resetInput();
+    };
  }

@@ -29,14 +29,29 @@ var AppComponent = (function () {
         this.text = 'Liste des étudiants';
         this.editBtn = 'Modifier';
         this.edit = 'Editer : ';
+        this.state = 'Etat : ';
+        this.add = 'Ajouter';
         this.firstName = 'Prénom :';
         this.lastName = 'Nom :';
         this.studentsList = STUDENTS;
+        // Appel de la fonction resetInput() pour initialier les inputs au chargement
+        this.resetInput();
     }
     // Création d'un fonction disponible dans la vue : à propos du binding https://goo.gl/GDr3rl
     AppComponent.prototype.onSelect = function (student) {
         this.selectedStudent = student;
     };
+    // Fonction pour ajouter un nouvel objet à la collection de données
+    AppComponent.prototype.addNewObject = function () {
+        this.studentsList.push(this.newStudent);
+        this.resetInput();
+    };
+    ;
+    // Création d'une fonction pour vider les input
+    AppComponent.prototype.resetInput = function () {
+        this.newStudent = { id: 0, firstName: '', lastName: '', state: 1 };
+    };
+    ;
     AppComponent = __decorate([
         core_1.Component({
             selector: 'my-app',
