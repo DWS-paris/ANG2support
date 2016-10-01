@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 
 @Component({
-    // Définition du selector
     selector: 'my-app',
 
     // Créer un fichier de template : à propos des templates https://goo.gl/7xYY66
