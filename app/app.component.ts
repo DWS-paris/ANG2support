@@ -1,20 +1,11 @@
 import { Component } from '@angular/core';
 
-export class Student {
-  id: number;
-  firstName: string;
-  lastName: string;
-  state: number;
-}
+// Importer la config : à propos du fichier de configuration https://goo.gl/uMHHY1
+import { Config } from './config'
 
-const STUDENTS: Student[] = [
-    {id: 0, firstName: 'Pierre', lastName: 'Stone', state: 2},
-    {id: 1, firstName: 'Sophie', lastName: 'Bourdon', state: 3},
-    {id: 2, firstName: 'Jacques', lastName: 'Rakchy', state: 2},
-    {id: 3, firstName: 'Julie', lastName: 'Bicoule', state: 1},
-    {id: 4, firstName: 'Charles', lastName: 'Violon', state: 1},
-    {id: 5, firstName: 'Claire', lastName: 'Obscure', state: 1},
-];
+// Importer le model dans le composant : à propos des models https://goo.gl/DsFwMk
+import { StudentItem } from "./models/student.item";
+
 
 @Component({
     selector: 'my-app',
@@ -23,19 +14,25 @@ const STUDENTS: Student[] = [
 })
 
 export class AppComponent {
-    title = 'Student Platform';
-    text = 'Liste des étudiants';
-    editBtn = 'Modifier';
-    edit = 'Editer : ';
-    state = 'Etat : ';
-    add = 'Ajouter';
-    firstName = 'Prénom :';
-    lastName = 'Nom :';
-    studentsList = STUDENTS;
-    selectedStudent: Student;
-    newStudent: Student;
+    
+    // Utilisation des constantes
+    title = Config.APP_TITLE;
+    text = Config.APP_SS_TITLE;
+    editBtn = Config.EDIT_BTN;
+    edit = Config.EDIT;
+    state = Config.STATE;
+    add = Config.ADD;
+    firstName = Config.FIRSTNAME;
+    lastName = Config.LASTNAME;
 
-    onSelect(student: Student): void {
+    // Utilisation du model de données
+    selectedStudent: StudentItem;
+    newStudent: StudentItem;
+
+    // Création d'une variable pour uriliser un model de données
+    studentsList: [any];
+
+    onSelect(student: StudentItem): void {
         this.selectedStudent = student;
     }
     
@@ -50,5 +47,15 @@ export class AppComponent {
 
     constructor(){
         this.resetInput();
+
+        // Définition d'une collection de données utilisant le model/constructor
+        this.studentsList = [
+            new StudentItem({id: 0, firstName: 'Pierre', lastName: 'Stone', state: 2}),
+            new StudentItem({id: 1, firstName: 'Sophie', lastName: 'Bourdon', state: 3}),
+            new StudentItem({id: 2, firstName: 'Jacques', lastName: 'Rakchy', state: 2}),
+            new StudentItem({id: 3, firstName: 'Julie', lastName: 'Bicoule', state: 1}),
+            new StudentItem({id: 4, firstName: 'Charles', lastName: 'Violon', state: 1}),
+            new StudentItem({id: 5, firstName: 'Claire', lastName: 'Obscure', state: 1}),
+        ]
     };
  }

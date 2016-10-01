@@ -9,32 +9,31 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var Student = (function () {
-    function Student() {
-    }
-    return Student;
-}());
-exports.Student = Student;
-var STUDENTS = [
-    { id: 0, firstName: 'Pierre', lastName: 'Stone', state: 2 },
-    { id: 1, firstName: 'Sophie', lastName: 'Bourdon', state: 3 },
-    { id: 2, firstName: 'Jacques', lastName: 'Rakchy', state: 2 },
-    { id: 3, firstName: 'Julie', lastName: 'Bicoule', state: 1 },
-    { id: 4, firstName: 'Charles', lastName: 'Violon', state: 1 },
-    { id: 5, firstName: 'Claire', lastName: 'Obscure', state: 1 },
-];
+// Importer la config : à propos du fichier de configuration https://goo.gl/uMHHY1
+var config_1 = require('./config');
+// Importer le model dans le composant : à propos des models https://goo.gl/DsFwMk
+var student_item_1 = require("./models/student.item");
 var AppComponent = (function () {
     function AppComponent() {
-        this.title = 'Student Platform';
-        this.text = 'Liste des étudiants';
-        this.editBtn = 'Modifier';
-        this.edit = 'Editer : ';
-        this.state = 'Etat : ';
-        this.add = 'Ajouter';
-        this.firstName = 'Prénom :';
-        this.lastName = 'Nom :';
-        this.studentsList = STUDENTS;
+        // Utilisation des constantes
+        this.title = config_1.Config.APP_TITLE;
+        this.text = config_1.Config.APP_SS_TITLE;
+        this.editBtn = config_1.Config.EDIT_BTN;
+        this.edit = config_1.Config.EDIT;
+        this.state = config_1.Config.STATE;
+        this.add = config_1.Config.ADD;
+        this.firstName = config_1.Config.FIRSTNAME;
+        this.lastName = config_1.Config.LASTNAME;
         this.resetInput();
+        // Définition d'une collection de données utilisant le model/constructor
+        this.studentsList = [
+            new student_item_1.StudentItem({ id: 0, firstName: 'Pierre', lastName: 'Stone', state: 2 }),
+            new student_item_1.StudentItem({ id: 1, firstName: 'Sophie', lastName: 'Bourdon', state: 3 }),
+            new student_item_1.StudentItem({ id: 2, firstName: 'Jacques', lastName: 'Rakchy', state: 2 }),
+            new student_item_1.StudentItem({ id: 3, firstName: 'Julie', lastName: 'Bicoule', state: 1 }),
+            new student_item_1.StudentItem({ id: 4, firstName: 'Charles', lastName: 'Violon', state: 1 }),
+            new student_item_1.StudentItem({ id: 5, firstName: 'Claire', lastName: 'Obscure', state: 1 }),
+        ];
     }
     AppComponent.prototype.onSelect = function (student) {
         this.selectedStudent = student;
