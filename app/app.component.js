@@ -9,32 +9,34 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-// Création d'un type d'objet (constructeur)
 var Student = (function () {
     function Student() {
     }
     return Student;
 }());
 exports.Student = Student;
+// Création d'un jeu de données utilisant un constructeur : à propos du *ngFor https://goo.gl/HGcdt5
+var STUDENTS = [
+    { id: 0, firstName: 'Pierre', lastName: 'Stone', state: 2 },
+    { id: 1, firstName: 'Sophie', lastName: 'Bourdon', state: 3 },
+    { id: 2, firstName: 'Jacques', lastName: 'Rakchy', state: 2 },
+    { id: 3, firstName: 'Julie', lastName: 'Bicoule', state: 1 },
+    { id: 4, firstName: 'Charles', lastName: 'Violon', state: 1 },
+    { id: 5, firstName: 'Claire', lastName: 'Obscure', state: 1 },
+];
 var AppComponent = (function () {
     function AppComponent() {
-        // Envoyer des variables dans la vue : à propos des variables https://goo.gl/UGMdDh
         this.title = 'Student Platform';
         this.text = 'Liste des étudiants';
-        this.edit = 'Editer le prénom de l\'étudiant';
-        // Création d'un objet utilisant un constructeur
-        this.student = {
-            id: 0,
-            firstName: 'Pierre'
-        };
+        this.edit = 'Editer : ';
+        // Utilisation du jeu de données
+        this.studentsList = STUDENTS;
     }
     AppComponent = __decorate([
         core_1.Component({
             selector: 'my-app',
-            // Créer un fichier de template : à propos des templates https://goo.gl/7xYY66
             templateUrl: 'app/partials/app.component.html',
-            // Créer un fichier de styles : à propos des styles : https://goo.gl/jTkmZA
-            styleUrls: ['app/styles/app.component.css']
+            styleUrls: ['app/styles/app.component.css'],
         }), 
         __metadata('design:paramtypes', [])
     ], AppComponent);

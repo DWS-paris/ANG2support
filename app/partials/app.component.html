@@ -1,14 +1,19 @@
-<!-- Le template du component contient toutes les balises HTML -->
 <header>
-    <!-- Affichage d'un variable -->
     <h1>{{title}}</h1>
     <h2>{{text}}</h2>
 </header>
 
 <main>
-    <!-- Affichage des propriétés d'un objet -->
-    <h3><b>{{student.id}}</b> {{student.firstName}}</h3>
+    <!-- Faire une boucle sur le jeu de données : à propos du *ngFor https://goo.gl/HGcdt5 -->
+    <article *ngFor="let student of studentsList">
+        <h3>{{student.firstName}} {{student.lastName}}</h3>
+        <p>{{edit}} <input [(ngModel)]="student.firstName"></p>
 
-    <!-- Utilisation d'un ngModel -->
-    <p>{{edit}} <input [(ngModel)]="student.firstName"></p>
+        <aside>
+            <!-- Affichage conditionnel : à propos du *ngIf https://goo.gl/7A9B2N -->
+            <p *ngIf="student.state == 1">{{state1}}</p>
+            <p *ngIf="student.state == 2">{{state2}}</p>
+            <p *ngIf="student.state == 3">{{state3}}</p>
+        </aside>
+    </article>
 </main>

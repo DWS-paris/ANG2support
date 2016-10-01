@@ -1,30 +1,35 @@
 import { Component } from '@angular/core';
 
-// Création d'un type d'objet (constructeur)
 export class Student {
   id: number;
   firstName: string;
+
+  // Modification du constructeur
+  lastName: string;
+  state: number;
 }
+
+// Création d'un jeu de données utilisant un constructeur : à propos du *ngFor https://goo.gl/HGcdt5
+const STUDENTS: Student[] = [
+    {id: 0, firstName: 'Pierre', lastName: 'Stone', state: 2},
+    {id: 1, firstName: 'Sophie', lastName: 'Bourdon', state: 3},
+    {id: 2, firstName: 'Jacques', lastName: 'Rakchy', state: 2},
+    {id: 3, firstName: 'Julie', lastName: 'Bicoule', state: 1},
+    {id: 4, firstName: 'Charles', lastName: 'Violon', state: 1},
+    {id: 5, firstName: 'Claire', lastName: 'Obscure', state: 1},
+];
 
 @Component({
     selector: 'my-app',
-
-    // Créer un fichier de template : à propos des templates https://goo.gl/7xYY66
     templateUrl: 'app/partials/app.component.html',
-    // Créer un fichier de styles : à propos des styles : https://goo.gl/jTkmZA
-    styleUrls: ['app/styles/app.component.css']
+    styleUrls: ['app/styles/app.component.css'],
 })
 
 export class AppComponent {
-
-    // Envoyer des variables dans la vue : à propos des variables https://goo.gl/UGMdDh
     title = 'Student Platform';
     text = 'Liste des étudiants';
-    edit = 'Editer le prénom de l\'étudiant'
+    edit = 'Editer : ';
 
-    // Création d'un objet utilisant un constructeur
-    student: Student = {
-        id: 0,
-        firstName: 'Pierre'
-    };
+    // Utilisation du jeu de données
+    studentsList = STUDENTS;
  }
