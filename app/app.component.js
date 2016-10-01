@@ -10,17 +10,14 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var config_1 = require('./config');
-// Import du service dans l'application : à propos des services https://goo.gl/uz1cpM
 var students_service_1 = require("./services/students.service");
 var AppComponent = (function () {
-    // Ajout du service dans le constructor
     function AppComponent(studentService) {
         this.studentService = studentService;
         this.title = config_1.Config.APP_TITLE;
         this.text = config_1.Config.APP_SS_TITLE;
         this.state = config_1.Config.STATE;
         this.resetInput();
-        // Création de la liste en appelant la fonction du service
         this.studentsList = this.studentService.getStudents();
     }
     AppComponent.prototype.onSelect = function (student) {
@@ -41,7 +38,6 @@ var AppComponent = (function () {
             selector: 'my-app',
             templateUrl: 'app/partials/app.component.html',
             styleUrls: ['app/styles/app.component.css'],
-            // Configuration du provider pour utiliser le service
             providers: [students_service_1.StudentService],
         }), 
         __metadata('design:paramtypes', [students_service_1.StudentService])
