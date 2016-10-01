@@ -10,7 +10,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var AppComponent = (function () {
-    // Création d'un constructor pour envoyer un tableau de données dans la vue
+    // Création d'un constructor pour envoyer le jeu de données dans la vue
     function AppComponent() {
         this.title = 'Student Platform';
         this.text = 'Liste des étudiants';
