@@ -9,32 +9,35 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var Hero = (function () {
-    function Hero() {
+// Création d'un type d'objet (constructeur)
+var Student = (function () {
+    function Student() {
     }
-    Hero = __decorate([
+    return Student;
+}());
+exports.Student = Student;
+var AppComponent = (function () {
+    function AppComponent() {
+        // Envoyer des variables dans la vue : à propos des variables https://goo.gl/UGMdDh
+        this.title = 'Student Platform';
+        this.text = 'Liste des étudiants';
+        this.edit = 'Editer le prénom de l\'étudiant';
+        // Création d'un objet utilisant un constructeur
+        this.student = {
+            id: 0,
+            firstName: 'Pierre'
+        };
+    }
+    AppComponent = __decorate([
         core_1.Component({
             selector: 'my-app',
+            // Créer un fichier de template : à propos des templates https://goo.gl/7xYY66
             templateUrl: 'app/partials/app.component.html',
+            // Créer un fichier de styles : à propos des styles : https://goo.gl/jTkmZA
             styleUrls: ['app/styles/app.component.css']
         }), 
         __metadata('design:paramtypes', [])
-    ], Hero);
-    return Hero;
-}());
-exports.Hero = Hero;
-var AppComponent = (function () {
-    function AppComponent() {
-        this.title = 'Student Platform';
-        this.text = 'Liste des étudiants';
-        this.state1 = 'Etudiant présent';
-        this.state2 = 'Etudiant en retard';
-        this.state3 = 'Etudiant absent';
-        this.hero = {
-            id: 1,
-            name: 'Windstorm'
-        };
-    }
+    ], AppComponent);
     return AppComponent;
 }());
 exports.AppComponent = AppComponent;
