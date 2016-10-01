@@ -27,12 +27,28 @@ export class AppComponent {
     text = 'Liste des étudiants';
     editBtn = 'Modifier';
     edit = 'Editer : ';
+    state = 'Etat : ';
+    add = 'Ajouter';
     firstName = 'Prénom :';
     lastName = 'Nom :';
     studentsList = STUDENTS;
     selectedStudent: Student;
+    newStudent: Student;
 
     onSelect(student: Student): void {
         this.selectedStudent = student;
     }
+    
+    addNewObject(){
+        this.studentsList.push(this.newStudent);
+        this.resetInput();
+    };
+
+    resetInput(){
+        this.newStudent = {id: 0, firstName: '', lastName: '', state: 1}
+    }
+
+    constructor(){
+        this.resetInput();
+    };
  }

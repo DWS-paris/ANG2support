@@ -29,13 +29,25 @@ var AppComponent = (function () {
         this.text = 'Liste des étudiants';
         this.editBtn = 'Modifier';
         this.edit = 'Editer : ';
+        this.state = 'Etat : ';
+        this.add = 'Ajouter';
         this.firstName = 'Prénom :';
         this.lastName = 'Nom :';
         this.studentsList = STUDENTS;
+        this.resetInput();
     }
     AppComponent.prototype.onSelect = function (student) {
         this.selectedStudent = student;
     };
+    AppComponent.prototype.addNewObject = function () {
+        this.studentsList.push(this.newStudent);
+        this.resetInput();
+    };
+    ;
+    AppComponent.prototype.resetInput = function () {
+        this.newStudent = { id: 0, firstName: '', lastName: '', state: 1 };
+    };
+    ;
     AppComponent = __decorate([
         core_1.Component({
             selector: 'my-app',
