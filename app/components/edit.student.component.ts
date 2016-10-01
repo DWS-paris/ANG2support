@@ -1,19 +1,16 @@
 import { Component } from '@angular/core';
-import { Config } from './config';
-import { StudentItem } from "./models/student.item";
-import {StudentService} from "./services/students.service";
+import { Config } from '../config';
+import { StudentItem } from "../models/student.item";
+import { StudentService } from "../services/students.service";
 
 
 @Component({
-    selector: 'my-app',
-    templateUrl: 'app/partials/app.component.html',
+    selector: 'edit-student-page',
+    templateUrl: 'app/partials/components/edit.student.component.html',
     providers: [StudentService],
 })
 
-export class AppComponent {
-    title = Config.APP_TITLE;
-    text = Config.APP_SS_TITLE;
-    state = Config.STATE;
+export class EditStudentComponent {
     selectedStudent: StudentItem;
     newStudent: StudentItem;
     studentsList: StudentItem[];

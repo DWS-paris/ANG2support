@@ -16,6 +16,9 @@ var student_item_1 = require("../models/student.item");
 var StudentDirective = (function () {
     function StudentDirective() {
         this.editBtn = config_1.Config.EDIT_BTN;
+        this.state1 = config_1.Config.STATE1;
+        this.state2 = config_1.Config.STATE2;
+        this.state3 = config_1.Config.STATE3;
         // L’utilisation de la fonction de la class Output permet d'envoyer dans la directive les données vers un autre composant.
         // La création d’un instance de EventEmitter() permet de créer un événement personnalisé.
         this.sendStudentDetail = new core_1.EventEmitter();

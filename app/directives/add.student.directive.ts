@@ -13,8 +13,10 @@ import { StudentItem } from "../models/student.item";
 // Export de la class de la directive
 export class AddStudentDirective {
     add = Config.ADD;
+    addStudent = Config.ADD_STUDENT;
     firstName = Config.FIRSTNAME;
     lastName = Config.LASTNAME;
+    state = Config.STATE;
 
     selectedStudent: StudentItem;
     

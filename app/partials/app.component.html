@@ -1,21 +1,11 @@
 <header>
     <h1>{{title}}</h1>
     <h2>{{text}}</h2>
+    <nav>
+        <!-- Configurer les liens des routes : à propos des routes -->
+        <a routerLink="/dashboard">Dashboard</a> <a routerLink="/edit">Editer la liste</a>
+    </nav>
 </header>
 
-<main>
-    <section>
-        <!-- Ajout de la directive add-student : à propos des directives https://goo.gl/fGh7QS -->
-        <add-student [newStudent]="newStudent" (sendNewStudentData)="addNewStudent($event)"></add-student>
-    </section>
-
-    <section *ngIf="selectedStudent">
-        <!-- Ajout de la directive edit-student -->
-        <edit-student [selectedStudent]="selectedStudent"></edit-student>
-    </section>
-    
-    <section *ngFor="let student of studentsList" >
-        <!-- Ajout de la directive student-item -->
-        <student-item [student]="student" (sendStudentDetail)="onSelect($event)"></student-item>
-    </section>
-</main>
+<!-- Ajouter la directive router-outlet pour afficher les vues des routes --->
+<router-outlet></router-outlet>

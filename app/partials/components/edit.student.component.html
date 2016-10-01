@@ -1,0 +1,15 @@
+<main id="editPage">
+        
+    <section id="addStudentForm">
+        <add-student [newStudent]="newStudent" (sendNewStudentData)="addNewStudent($event)"></add-student>
+    </section>
+    
+    <section *ngFor="let student of studentsList" class="studentsListItem">
+        <student-item [student]="student" (sendStudentDetail)="onSelect($event)"></student-item>
+    </section>
+
+    <section *ngIf="selectedStudent" id="editUserForm">
+        <edit-student [selectedStudent]="selectedStudent"></edit-student>
+    </section>
+
+</main>

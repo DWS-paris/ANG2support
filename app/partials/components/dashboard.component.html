@@ -1,0 +1,7 @@
+<main id="dashboardPage">
+
+    <section *ngFor="let student of studentsList" class="student-item">
+        <student-item [student]="student" (sendStudentDetail)="onSelect($event)"></student-item>
+    </section>
+
+</main>

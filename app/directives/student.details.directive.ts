@@ -13,6 +13,9 @@ import {StudentItem} from "../models/student.item";
 // Export de la class de la directive
 export class StudentDirective {
     editBtn = Config.EDIT_BTN;
+    state1 = Config.STATE1;
+    state2 = Config.STATE2;
+    state3 = Config.STATE3;
     
     // L’utilisation de la fonction de la class Input permet de recevoir dans la directive les données d’un autre composant.
     @Input() student: StudentItem;

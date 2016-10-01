@@ -1,31 +1,54 @@
-/* Master Styles */
+/*
+Reset
+*/
+
+*{
+  margin: 0;
+  padding: 0;
+}
+
+html{
+  font-size: 62.5%;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.5rem;
+  text-align: center;
+  padding: 3rem;
+
+  max-width: 32rem;
+  margin: auto;
+}
+
 h1 {
   color: #369; 
-  font-family: Arial, Helvetica, sans-serif;   
   font-size: 250%;
 }
 h2, h3 { 
-  color: #444;
-  font-family: Arial, Helvetica, sans-serif;   
+  color: black;
   font-weight: lighter;
 }
-body { 
-  margin: 2em; 
+
+a, button, #editPage .studentsListItem {
+  -webkit-transition: all .5s;
+  transition: all .5s;
 }
-body, input[text], button { 
-  color: #888; 
-  font-family: Cambria, Georgia; 
-}
+
 a {
   cursor: pointer;
   cursor: hand;
 }
+
+.textAlignRight{
+  text-align: right;
+}
+
 button {
-  font-family: Arial;
   background-color: #eee;
   border: none;
-  padding: 5px 10px;
-  border-radius: 4px;
+  padding: .5rem 1rem;
+  border-radius: .4rem;
   cursor: pointer;
   cursor: hand;
 }
@@ -38,105 +61,149 @@ button:disabled {
   cursor: auto;
 }
 
-/* Navigation link styles */
+ul {
+  list-style-type: none;
+}
+
+
+
+
+/*
+Style header
+*/
+
+header{
+  margin-bottom: 2rem;
+}
+
+header h2 {
+    margin-bottom: 2rem;
+}
+
+
+
+
+/*
+Style NAV
+*/
+
+nav {
+    margin: 1rem 0;
+    padding: 1rem 0;
+    border-top: .1rem dotted #336699;
+    border-bottom: .1rem dotted #336699;
+    text-align: left
+}
+
 nav a {
-  padding: 5px 10px;
-  text-decoration: none;
-  margin-top: 10px;
-  display: inline-block;
-  background-color: #eee;
-  border-radius: 4px;
+    padding: .5rem 1rem;
+    text-decoration: none;
+    display: inline-block;
+    background-color: #eee;
+    border-radius: .4rem;
+    font-size: 1rem;
+    text-transform: uppercase;
 }
-nav a:visited, a:link {
-  color: #607D8B;
-}
+
 nav a:hover {
   color: #039be5;
   background-color: #CFD8DC;
 }
-nav a.router-link-active {
-  color: #039be5;
+
+
+
+/*
+Page Dashboard
+*/
+#dashboardPage .student-item {
+    color: white;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    background-color: rgba(51,102,153,.5);
+    cursor: pointer;
+    
+    -webkit-transition: all .5s;
+    transition: all .5s;
 }
 
-/* items class */
-.items {
-  margin: 0 0 2em 0;
-  list-style-type: none;
-  padding: 0;
-  width: 24em;
+#dashboardPage .student-item:hover {
+    background-color: rgba(51,102,153,.7);
 }
-.items li {
-  cursor: pointer;
-  position: relative;
-  left: 0;
-  background-color: #EEE;
-  margin: .5em;
-  padding: .3em 0;
-  height: 1.6em;
-  border-radius: 4px;
+
+#dashboardPage .student-item button {
+  display: none;
 }
-.items li:hover {
-  color: #607D8B;
-  background-color: #DDD;
-  left: .1em;
+
+/*
+Page Edit
+*/
+
+#editPage{
+  text-align: left
 }
-.items li.selected:hover {
-  background-color: #BBD8DC;
-  color: white;
+
+#editPage .studentsListItem {
+    padding: 2rem 1rem;
+    position: relative;
+    border-bottom: .1rem dotted #336699;
 }
-.items .text {
-  position: relative;
-  top: -3px;
+
+#editPage .studentsListItem:hover {
+    background-color: rgba(51,102,153,.1);
 }
-.items {
-  margin: 0 0 2em 0;
-  list-style-type: none;
-  padding: 0;
-  width: 24em;
+
+#editPage .studentsListItem h3, #editPage .studentsListItem aside, #editPage .studentsListItem p{
+  display: inline;
 }
-.items li {
-  cursor: pointer;
-  position: relative;
-  left: 0;
-  background-color: #EEE;
-  margin: .5em;
-  padding: .3em 0;
-  height: 1.6em;
-  border-radius: 4px;
-}
-.items li:hover {
-  color: #607D8B;
-  background-color: #DDD;
-  left: .1em;
-}
-.items li.selected {
-  background-color: #CFD8DC;
+
+#editPage .studentsListItem button{
+  position: absolute;
+  right: 1rem;
+  background-color: #336699;
   color: white;
 }
 
-.items li.selected:hover {
-  background-color: #BBD8DC;
-}
-.items .text {
-  position: relative;
-  top: -3px;
-}
-.items .badge {
-  display: inline-block;
-  font-size: small;
-  color: white;
-  padding: 0.8em 0.7em 0 0.7em;
-  background-color: #607D8B;
-  line-height: 1em;
-  position: relative;
-  left: -1px;
-  top: -4px;
-  height: 1.8em;
-  margin-right: .8em;
-  border-radius: 4px 0 0 4px;
+#editPage .studentsListItem button:hover{
+  background-color: black;
 }
 
-/* everywhere else */
-* { 
-  font-family: Arial, Helvetica, sans-serif; 
+#editPage .studentsListItem p {
+    font-size: 1rem;
+    text-transform: uppercase;
+    color: #336699;
+}
+
+#editUserForm {
+    padding: 2rem;
+    background-color: #336699;
+    color: white;
+}
+
+#editPage h3{
+    margin-bottom: 1rem;
+}
+
+#editUserForm h3 strong{
+  color: black;
+}
+
+#editPage li:not(:last-of-type){
+  margin-bottom: 1rem;
+}
+
+#editPage label, #editPage input{
+    display: inline-block;
+    width: 16%;
+    font-size: 1.2rem;
+}
+
+#editPage input {
+    width: 77%;
+    padding: .5rem;
+}
+
+#addStudentForm {
+    padding: 2rem;
+    background-color: rgba(51,102,153,.5);
+    color: white;
 }

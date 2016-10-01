@@ -2,19 +2,22 @@ import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule }   from '@angular/forms';
 
-import { AppComponent }  from './app.component';
+// Import de la class du routing : à propos des routes https://goo.gl/FbKYVx
+import { Router } from './app.routing';
 
-// Import des directives : à propos des directives https://goo.gl/fGh7QS 
+import { AppComponent }  from './app.component';
+import { EditStudentComponent } from './components/edit.student.component';
+import { DashboardComponent } from './components/dashboard.component';
+
 import { AddStudentDirective } from "./directives/add.student.directive";
 import { EditStudentDirective } from "./directives/edit.student.directive";
 import { StudentDirective } from "./directives/student.details.directive";
 
 @NgModule({
-  imports: [ BrowserModule, FormsModule ],
+  // Import des routes dans l'application
+  imports: [ BrowserModule, FormsModule, Router ],
 
-  // Ajout des directives dans le tableau des déclarations
-  declarations: [ AppComponent, AddStudentDirective, EditStudentDirective, StudentDirective ],
-
+  declarations: [ AppComponent, EditStudentComponent, DashboardComponent, AddStudentDirective, EditStudentDirective, StudentDirective ],
   bootstrap: [ AppComponent ]
 })
 export class AppModule { }

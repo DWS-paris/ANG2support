@@ -22,7 +22,7 @@ var Config = (function () {
     });
     ;
     Object.defineProperty(Config, "EDIT", {
-        get: function () { return 'Editer : '; },
+        get: function () { return 'Editer'; },
         enumerable: true,
         configurable: true
     });
@@ -33,20 +33,44 @@ var Config = (function () {
         configurable: true
     });
     ;
+    Object.defineProperty(Config, "STATE1", {
+        get: function () { return 'Présent'; },
+        enumerable: true,
+        configurable: true
+    });
+    ;
+    Object.defineProperty(Config, "STATE2", {
+        get: function () { return 'En retard'; },
+        enumerable: true,
+        configurable: true
+    });
+    ;
+    Object.defineProperty(Config, "STATE3", {
+        get: function () { return 'Absent'; },
+        enumerable: true,
+        configurable: true
+    });
+    ;
     Object.defineProperty(Config, "ADD", {
         get: function () { return 'Ajouter'; },
         enumerable: true,
         configurable: true
     });
     ;
+    Object.defineProperty(Config, "ADD_STUDENT", {
+        get: function () { return 'Ajouter un étudiant'; },
+        enumerable: true,
+        configurable: true
+    });
+    ;
     Object.defineProperty(Config, "FIRSTNAME", {
-        get: function () { return 'Prénom :'; },
+        get: function () { return 'Prénom'; },
         enumerable: true,
         configurable: true
     });
     ;
     Object.defineProperty(Config, "LASTNAME", {
-        get: function () { return 'Nom :'; },
+        get: function () { return 'Nom'; },
         enumerable: true,
         configurable: true
     });

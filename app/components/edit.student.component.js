@@ -9,39 +9,35 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var config_1 = require('./config');
-var students_service_1 = require("./services/students.service");
-var AppComponent = (function () {
-    function AppComponent(studentService) {
+var students_service_1 = require("../services/students.service");
+var EditStudentComponent = (function () {
+    function EditStudentComponent(studentService) {
         this.studentService = studentService;
-        this.title = config_1.Config.APP_TITLE;
-        this.text = config_1.Config.APP_SS_TITLE;
-        this.state = config_1.Config.STATE;
         this.resetInput();
         this.studentsList = this.studentService.getStudents();
     }
-    AppComponent.prototype.onSelect = function (student) {
+    EditStudentComponent.prototype.onSelect = function (student) {
         this.selectedStudent = student;
     };
     ;
-    AppComponent.prototype.addNewStudent = function () {
+    EditStudentComponent.prototype.addNewStudent = function () {
         this.studentsList.push(this.newStudent);
         this.resetInput();
     };
     ;
-    AppComponent.prototype.resetInput = function () {
+    EditStudentComponent.prototype.resetInput = function () {
         this.newStudent = { id: 0, firstName: '', lastName: '', state: 1 };
     };
     ;
-    AppComponent = __decorate([
+    EditStudentComponent = __decorate([
         core_1.Component({
-            selector: 'my-app',
-            templateUrl: 'app/partials/app.component.html',
+            selector: 'edit-student-page',
+            templateUrl: 'app/partials/components/edit.student.component.html',
             providers: [students_service_1.StudentService],
         }), 
         __metadata('design:paramtypes', [students_service_1.StudentService])
-    ], AppComponent);
-    return AppComponent;
+    ], EditStudentComponent);
+    return EditStudentComponent;
 }());
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+exports.EditStudentComponent = EditStudentComponent;
+//# sourceMappingURL=edit.student.component.js.map

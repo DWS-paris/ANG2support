@@ -16,8 +16,10 @@ var student_item_1 = require("../models/student.item");
 var AddStudentDirective = (function () {
     function AddStudentDirective() {
         this.add = config_1.Config.ADD;
+        this.addStudent = config_1.Config.ADD_STUDENT;
         this.firstName = config_1.Config.FIRSTNAME;
         this.lastName = config_1.Config.LASTNAME;
+        this.state = config_1.Config.STATE;
         // L’utilisation de la fonction de la class Output permet d'envoyer dans la directive les données vers un autre composant.
         // La création d’un instance de EventEmitter() permet de créer un événement personnalisé.
         this.sendNewStudentData = new core_1.EventEmitter();

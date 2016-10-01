@@ -1,4 +1,7 @@
-<input [(ngModel)]="newStudent.firstName" placeholder="{{firstName}}">
-<input [(ngModel)]="newStudent.lastName" placeholder="{{lastName}}">
-<input [(ngModel)]="newStudent.state" placeholder="{{state}}">
-<button (click)="addNewStudent()">{{add}}</button>
+<h3>{{addStudent}}</h3>
+<ul>
+    <li><label>{{firstName}}</label> <input [(ngModel)]="newStudent.firstName" placeholder="{{firstName}}"></li>
+    <li><label>{{lastName}}</label> <input [(ngModel)]="newStudent.lastName" placeholder="{{lastName}}"></li>
+    <li><label>{{state}}</label> <input [(ngModel)]="newStudent.state" placeholder="{{state}}"></li>
+    <li class="textAlignRight"><button (click)="addNewStudent()">{{add}}</button></li>
+</ul>
