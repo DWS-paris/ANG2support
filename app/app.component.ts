@@ -2,18 +2,31 @@ import { Component } from '@angular/core';
 
 @Component({
     selector: 'my-app',
-
-    // Créer un fichier de template : à propos des templates https://goo.gl/7xYY66
     templateUrl: 'app/partials/app.component.html',
-
-    // Créer un fichier de styles : à propos des styles : https://goo.gl/jTkmZA
     styleUrls: ['app/styles/app.component.css']
 })
 
 // Exporter la class du Component
 export class AppComponent {
-
-    // Envoyer des variables dans la vue : à propos des variables https://goo.gl/UGMdDh
     private title = 'Student Platform';
-    private text = 'Hello Angular2';
+    private text = 'Liste des étudiants';
+    private state1 = 'Etudiant présent';
+    private state2 = 'Etudiant en retard';
+    private state3 = 'Etudiant absent';
+
+    // Création d'une variable pour array
+    private studentsList: [any];
+
+    // Création d'un constructor pour envoyer un tableau de données dans la vue
+    constructor(){
+        // Création du jeu de données
+        this.studentsList = [
+            {id: 0, firstName: 'Pierre', lastName: 'Stone', state: 2},
+            {id: 1, firstName: 'Sophie', lastName: 'Bourdon', state: 3},
+            {id: 2, firstName: 'Jacques', lastName: 'Rakchy', state: 2},
+            {id: 3, firstName: 'Julie', lastName: 'Bicoule', state: 1},
+            {id: 4, firstName: 'Charles', lastName: 'Violon', state: 1},
+            {id: 5, firstName: 'Claire', lastName: 'Obscure', state: 1},
+        ]
+    };
  }

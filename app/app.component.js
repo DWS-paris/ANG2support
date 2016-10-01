@@ -10,18 +10,28 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var AppComponent = (function () {
+    // Création d'un constructor pour envoyer un tableau de données dans la vue
     function AppComponent() {
-        // Envoyer des variables dans la vue : à propos des variables https://goo.gl/UGMdDh
         this.title = 'Student Platform';
-        this.text = 'Hello Angular2';
+        this.text = 'Liste des étudiants';
+        this.state1 = 'Etudiant présent';
+        this.state2 = 'Etudiant en retard';
+        this.state3 = 'Etudiant absent';
+        // Création du jeu de données
+        this.studentsList = [
+            { id: 0, firstName: 'Pierre', lastName: 'Stone', state: 2 },
+            { id: 1, firstName: 'Sophie', lastName: 'Bourdon', state: 3 },
+            { id: 2, firstName: 'Jacques', lastName: 'Rakchy', state: 2 },
+            { id: 3, firstName: 'Julie', lastName: 'Bicoule', state: 1 },
+            { id: 4, firstName: 'Charles', lastName: 'Violon', state: 1 },
+            { id: 5, firstName: 'Claire', lastName: 'Obscure', state: 1 },
+        ];
     }
+    ;
     AppComponent = __decorate([
         core_1.Component({
-            // Définition du selector
             selector: 'my-app',
-            // Créer un fichier de template : à propos des templates https://goo.gl/7xYY66
             templateUrl: 'app/partials/app.component.html',
-            // Créer un fichier de styles : à propos des styles : https://goo.gl/jTkmZA
             styleUrls: ['app/styles/app.component.css']
         }), 
         __metadata('design:paramtypes', [])
