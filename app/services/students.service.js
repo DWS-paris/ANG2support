@@ -16,9 +16,7 @@ var StudentService = (function () {
     StudentService.prototype.getStudents = function () {
         return Promise.resolve(students_data_1.STUDENTS);
     };
-    // Ajout d'une fonction récupérant l’ID de la route : à propos des routes dynamiques https://goo.gl/Qe53YN
     StudentService.prototype.getStudent = function (id) {
-        // Définition des variables à utiliser dans la route dynamique
         return this.getStudents().then(function (students) { return students.find(function (singleStudent) { return singleStudent.id === id; }); });
     };
     StudentService = __decorate([

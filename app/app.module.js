@@ -11,9 +11,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var platform_browser_1 = require('@angular/platform-browser');
 var forms_1 = require('@angular/forms');
-// Import de la class du routing : à propos des routes https://goo.gl/FbKYVx
 var app_routing_1 = require('./app.routing');
-// Import du service pour les routes dynamiques : à propos des routes dynamiques https://goo.gl/Qe53YN
 var students_service_1 = require('./services/students.service');
 var app_component_1 = require('./app.component');
 var edit_student_component_1 = require('./components/edit.student.component');
@@ -29,7 +27,6 @@ var AppModule = (function () {
         core_1.NgModule({
             imports: [platform_browser_1.BrowserModule, forms_1.FormsModule, app_routing_1.Router],
             declarations: [app_component_1.AppComponent, edit_student_component_1.EditStudentComponent, dashboard_component_1.DashboardComponent, student_details_component_1.StudentDetailsComponent, add_student_directive_1.AddStudentDirective, edit_student_directive_1.EditStudentDirective, student_details_directive_1.StudentDirective],
-            // Ajout du provider pour les routes dynamiques
             providers: [students_service_1.StudentService],
             bootstrap: [app_component_1.AppComponent]
         }), 

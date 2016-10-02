@@ -13,5 +13,4 @@ export class Config{
     public static get FIRSTNAME(): string{ return 'Prénom'};
     public static get LASTNAME(): string{ return 'Nom'};
     public static get BACK(): string{ return 'Retour'};
-    
 }
