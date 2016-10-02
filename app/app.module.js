@@ -11,8 +11,11 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var platform_browser_1 = require('@angular/platform-browser');
 var forms_1 = require('@angular/forms');
-var app_routing_1 = require('./app.routing');
-var students_service_1 = require('./services/students.service');
+// Importer le service HTTP : à propos du service HTTP https://goo.gl/S6imGs
+var http_1 = require('@angular/http');
+// Gérénation d'une API "in memory"
+var angular_in_memory_web_api_1 = require('angular-in-memory-web-api');
+var in_memory_data_service_1 = require('./services/in-memory-data.service');
 var app_component_1 = require('./app.component');
 var edit_student_component_1 = require('./components/edit.student.component');
 var dashboard_component_1 = require('./components/dashboard.component');
@@ -20,12 +23,15 @@ var student_details_component_1 = require('./components/student.details.componen
 var add_student_directive_1 = require("./directives/add.student.directive");
 var edit_student_directive_1 = require("./directives/edit.student.directive");
 var student_details_directive_1 = require("./directives/student.details.directive");
+var students_service_1 = require('./services/students.service');
+var app_routing_1 = require('./app.routing');
 var AppModule = (function () {
     function AppModule() {
     }
     AppModule = __decorate([
         core_1.NgModule({
-            imports: [platform_browser_1.BrowserModule, forms_1.FormsModule, app_routing_1.Router],
+            // Ajout du service HTTP
+            imports: [platform_browser_1.BrowserModule, forms_1.FormsModule, http_1.HttpModule, angular_in_memory_web_api_1.InMemoryWebApiModule.forRoot(in_memory_data_service_1.InMemoryDataService), app_routing_1.Router],
             declarations: [app_component_1.AppComponent, edit_student_component_1.EditStudentComponent, dashboard_component_1.DashboardComponent, student_details_component_1.StudentDetailsComponent, add_student_directive_1.AddStudentDirective, edit_student_directive_1.EditStudentDirective, student_details_directive_1.StudentDirective],
             providers: [students_service_1.StudentService],
             bootstrap: [app_component_1.AppComponent]

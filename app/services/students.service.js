@@ -9,19 +9,32 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var students_data_1 = require('../datas/students.data');
+var http_1 = require('@angular/http');
+require('rxjs/add/operator/toPromise');
 var StudentService = (function () {
-    function StudentService() {
+    // Ajout de l'api dasn le constructor
+    function StudentService(http) {
+        this.http = http;
+        // URL de l'api "in memory" (nom de la Db)
+        this.studentsUrl = 'app/studentsDb';
     }
+    // Création d'une variable pour la gestion des erreurs
+    StudentService.prototype.handleError = function (error) {
+        console.error('An error occurred', error);
+        return Promise.reject(error.message || error);
+    };
     StudentService.prototype.getStudents = function () {
-        return Promise.resolve(students_data_1.STUDENTS);
+        return this.http.get(this.studentsUrl)
+            .toPromise()
+            .then(function (response) { return response.json().data; })
+            .catch(this.handleError);
     };
     StudentService.prototype.getStudent = function (id) {
         return this.getStudents().then(function (students) { return students.find(function (singleStudent) { return singleStudent.id === id; }); });
     };
     StudentService = __decorate([
         core_1.Injectable(), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [http_1.Http])
     ], StudentService);
     return StudentService;
 }());
