@@ -2,7 +2,7 @@ import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule }   from '@angular/forms';
 
-// Importer le service HTTP : à propos du service HTTP https://goo.gl/S6imGs
+// Importer du modul HttpModul : à propos du service HTTP https://goo.gl/S6imGs
 import { HttpModule }    from '@angular/http';
 
 // Gérénation d'une API "in memory"
@@ -22,7 +22,7 @@ import { Router } from './app.routing';
 
 @NgModule({
 
-  // Ajout du service HTTP
+  // Ajout du service HTTP et InMemoryWebApiModule
   imports: [ BrowserModule, FormsModule, HttpModule, InMemoryWebApiModule.forRoot(InMemoryDataService), Router ],
 
   declarations: [ AppComponent, EditStudentComponent, DashboardComponent, StudentDetailsComponent, AddStudentDirective, EditStudentDirective, StudentDirective ],

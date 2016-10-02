@@ -62,7 +62,12 @@ button:disabled {
 }
 
 ul {
-  list-style-type: none;
+    list-style-type: none;
+    margin: 2rem 0 3rem 0;
+}
+
+li{
+  position: relative;
 }
 
 
@@ -181,6 +186,16 @@ Page Edit
 
 #editPage h3{
     margin-bottom: 1rem;
+    position: relative;
+}
+
+#editPage h3 button {
+    position: absolute;
+    right: 0;
+}
+
+#editPage h3{
+    margin-bottom: 1rem;
 }
 
 #editUserForm h3 strong{
@@ -188,7 +203,7 @@ Page Edit
 }
 
 #editPage li:not(:last-of-type){
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
 }
 
 #editPage label, #editPage input{
@@ -200,6 +215,8 @@ Page Edit
 #editPage input {
     width: 77%;
     padding: .5rem;
+    position: absolute;
+    right: 0;
 }
 
 #addStudentForm {

@@ -15,6 +15,7 @@ var student_item_1 = require("../models/student.item");
 var EditStudentDirective = (function () {
     function EditStudentDirective() {
         this.edit = config_1.Config.EDIT;
+        this.deleteBtn = config_1.Config.DELETE_BTN;
         this.firstName = config_1.Config.FIRSTNAME;
         this.lastName = config_1.Config.LASTNAME;
     }

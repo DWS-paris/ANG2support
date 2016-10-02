@@ -19,11 +19,20 @@ var EditStudentComponent = (function () {
         this.selectedStudent = student;
     };
     ;
-    EditStudentComponent.prototype.addNewStudent = function () {
-        this.studentsList.push(this.newStudent);
-        this.resetInput();
+    // Création d'un fonction pour ajouter une entrée dans l'API
+    EditStudentComponent.prototype.addNewStudent = function (newStudent) {
+        var _this = this;
+        // Vérification de la variable à ajouter
+        if (!newStudent) {
+            return;
+        }
+        // Appel de la fonction create() du service
+        this.studentService.create(this.newStudent)
+            .then(function (newStudent) {
+            _this.studentsList.push(_this.newStudent);
+            _this.resetInput();
+        });
     };
-    ;
     EditStudentComponent.prototype.resetInput = function () {
         this.newStudent = { id: 0, firstName: '', lastName: '', state: 1 };
     };

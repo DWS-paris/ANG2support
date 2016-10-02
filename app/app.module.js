@@ -11,7 +11,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var platform_browser_1 = require('@angular/platform-browser');
 var forms_1 = require('@angular/forms');
-// Importer le service HTTP : à propos du service HTTP https://goo.gl/S6imGs
+// Importer du modul HttpModul : à propos du service HTTP https://goo.gl/S6imGs
 var http_1 = require('@angular/http');
 // Gérénation d'une API "in memory"
 var angular_in_memory_web_api_1 = require('angular-in-memory-web-api');
@@ -30,7 +30,7 @@ var AppModule = (function () {
     }
     AppModule = __decorate([
         core_1.NgModule({
-            // Ajout du service HTTP
+            // Ajout du service HTTP et InMemoryWebApiModule
             imports: [platform_browser_1.BrowserModule, forms_1.FormsModule, http_1.HttpModule, angular_in_memory_web_api_1.InMemoryWebApiModule.forRoot(in_memory_data_service_1.InMemoryDataService), app_routing_1.Router],
             declarations: [app_component_1.AppComponent, edit_student_component_1.EditStudentComponent, dashboard_component_1.DashboardComponent, student_details_component_1.StudentDetailsComponent, add_student_directive_1.AddStudentDirective, edit_student_directive_1.EditStudentDirective, student_details_directive_1.StudentDirective],
             providers: [students_service_1.StudentService],

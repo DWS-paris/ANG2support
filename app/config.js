@@ -21,6 +21,12 @@ var Config = (function () {
         configurable: true
     });
     ;
+    Object.defineProperty(Config, "DELETE_BTN", {
+        get: function () { return 'Supprimer'; },
+        enumerable: true,
+        configurable: true
+    });
+    ;
     Object.defineProperty(Config, "EDIT", {
         get: function () { return 'Editer'; },
         enumerable: true,
@@ -71,6 +77,12 @@ var Config = (function () {
     ;
     Object.defineProperty(Config, "LASTNAME", {
         get: function () { return 'Nom'; },
+        enumerable: true,
+        configurable: true
+    });
+    ;
+    Object.defineProperty(Config, "SAVE", {
+        get: function () { return 'Enregistrer'; },
         enumerable: true,
         configurable: true
     });

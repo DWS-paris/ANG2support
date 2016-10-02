@@ -22,11 +22,23 @@ export class EditStudentComponent implements OnInit  {
     onSelect(student: StudentItem){
         this.selectedStudent = student;
     };
-    
-    addNewStudent(){
-        this.studentsList.push(this.newStudent);
-        this.resetInput();
-    };
+
+
+    // Création d'un fonction pour ajouter une entrée dans l'API
+    addNewStudent(newStudent: any): void {
+
+        // Vérification de la variable à ajouter
+        if (!newStudent) { return; }
+        
+        // Appel de la fonction create() du service
+        this.studentService.create(this.newStudent)
+        
+        // Appel de la fonction .then() : ajout de la nouvell entrée
+        .then(newStudent => {
+            this.studentsList.push(this.newStudent);
+            this.resetInput();
+        });
+    }
 
     resetInput(){
         this.newStudent = {id: 0, firstName: '', lastName: '', state: 1}

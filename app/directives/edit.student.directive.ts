@@ -11,6 +11,7 @@ import { StudentItem } from "../models/student.item";
 
 export class EditStudentDirective {
     edit = Config.EDIT;
+    deleteBtn = Config.DELETE_BTN;
     firstName = Config.FIRSTNAME;
     lastName = Config.LASTNAME;
     
