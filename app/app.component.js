@@ -10,36 +10,17 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var config_1 = require('./config');
-var students_service_1 = require("./services/students.service");
 var AppComponent = (function () {
-    function AppComponent(studentService) {
-        this.studentService = studentService;
+    function AppComponent() {
         this.title = config_1.Config.APP_TITLE;
         this.text = config_1.Config.APP_SS_TITLE;
-        this.state = config_1.Config.STATE;
-        this.resetInput();
-        this.studentsList = this.studentService.getStudents();
     }
-    AppComponent.prototype.onSelect = function (student) {
-        this.selectedStudent = student;
-    };
-    ;
-    AppComponent.prototype.addNewStudent = function () {
-        this.studentsList.push(this.newStudent);
-        this.resetInput();
-    };
-    ;
-    AppComponent.prototype.resetInput = function () {
-        this.newStudent = { id: 0, firstName: '', lastName: '', state: 1 };
-    };
-    ;
     AppComponent = __decorate([
         core_1.Component({
             selector: 'my-app',
             templateUrl: 'app/partials/app.component.html',
-            providers: [students_service_1.StudentService],
         }), 
-        __metadata('design:paramtypes', [students_service_1.StudentService])
+        __metadata('design:paramtypes', [])
     ], AppComponent);
     return AppComponent;
 }());
