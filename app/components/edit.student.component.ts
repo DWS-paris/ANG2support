@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Config } from '../config';
 import { StudentItem } from "../models/student.item";
 import { StudentService } from "../services/students.service";
@@ -10,10 +10,14 @@ import { StudentService } from "../services/students.service";
     providers: [StudentService],
 })
 
-export class EditStudentComponent {
+export class EditStudentComponent implements OnInit  {
     selectedStudent: StudentItem;
     newStudent: StudentItem;
     studentsList: StudentItem[];
+
+    constructor( 
+        private studentService: StudentService 
+    ){};
 
     onSelect(student: StudentItem){
         this.selectedStudent = student;
@@ -26,10 +30,14 @@ export class EditStudentComponent {
 
     resetInput(){
         this.newStudent = {id: 0, firstName: '', lastName: '', state: 1}
+    }    
+
+    getStudents(): void {
+        this.studentService.getStudents().then(students => this.studentsList = students);
     }
 
-    constructor( private studentService: StudentService ){
+    ngOnInit(): void {
+        this.getStudents();
         this.resetInput();
-        this.studentsList = this.studentService.getStudents();
-    };
+    }
  }

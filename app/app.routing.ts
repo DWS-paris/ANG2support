@@ -2,12 +2,11 @@
 import { ModuleWithProviders }  from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-// Import des composants utilisés dans les routes
 import { EditStudentComponent }  from './components/edit.student.component';
 import { DashboardComponent }  from './components/dashboard.component';
+import { StudentDetailsComponent }  from './components/student.details.component';
 
 const appRoutes: Routes = [
-  // Définition d'une route
   {
     path: '',
     redirectTo: '/dashboard',
@@ -20,8 +19,13 @@ const appRoutes: Routes = [
   {
     path: 'edit',
     component: EditStudentComponent
+  },
+
+  // Définition d'un paramêtre ID dans la route : à propos des routes dynamiques https://goo.gl/Qe53YN
+  {
+    path: 'detail/:id',
+    component: StudentDetailsComponent
   }
 ];
 
-// Export de la class du module de routing
 export const Router: ModuleWithProviders = RouterModule.forRoot(appRoutes);

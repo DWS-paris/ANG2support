@@ -9,12 +9,29 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+// Import du router pour configurer les routes dynamiques : à propos des routes dynamiques https://goo.gl/Qe53YN
+var router_1 = require('@angular/router');
 var students_service_1 = require("../services/students.service");
 var DashboardComponent = (function () {
-    function DashboardComponent(studentService) {
+    // Définition du router et du service
+    function DashboardComponent(router, studentService) {
+        this.router = router;
         this.studentService = studentService;
-        this.studentsList = this.studentService.getStudents();
+        this.studentsList = [];
     }
+    ;
+    // Création d'une fonction pour écrire une route dynamique
+    DashboardComponent.prototype.gotoStudentDetails = function (student) {
+        // Récuparation du paramêtre de la route
+        var id = ['/detail', student.id];
+        // Fonction pour afficher la vue de la route
+        this.router.navigate(id);
+    };
+    ;
+    DashboardComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.studentService.getStudents().then(function (studentsList) { return _this.studentsList = studentsList; });
+    };
     ;
     DashboardComponent = __decorate([
         core_1.Component({
@@ -22,7 +39,7 @@ var DashboardComponent = (function () {
             templateUrl: 'app/partials/components/dashboard.component.html',
             providers: [students_service_1.StudentService],
         }), 
-        __metadata('design:paramtypes', [students_service_1.StudentService])
+        __metadata('design:paramtypes', [router_1.Router, students_service_1.StudentService])
     ], DashboardComponent);
     return DashboardComponent;
 }());

@@ -1,7 +1,8 @@
 <main id="dashboardPage">
 
-    <section *ngFor="let student of studentsList" class="student-item">
-        <student-item [student]="student" (sendStudentDetail)="onSelect($event)"></student-item>
+    <!-- Ajout d'un fonction pour afficher les route dynamiques : à propos des routes dynamiques https://goo.gl/Qe53YN -->
+    <section *ngFor="let student of studentsList" (click)="gotoStudentDetails(student)" class="student-item">
+        <student-item [student]="student"></student-item>
     </section>
 
 </main>

@@ -13,9 +13,8 @@ var students_service_1 = require("../services/students.service");
 var EditStudentComponent = (function () {
     function EditStudentComponent(studentService) {
         this.studentService = studentService;
-        this.resetInput();
-        this.studentsList = this.studentService.getStudents();
     }
+    ;
     EditStudentComponent.prototype.onSelect = function (student) {
         this.selectedStudent = student;
     };
@@ -28,7 +27,14 @@ var EditStudentComponent = (function () {
     EditStudentComponent.prototype.resetInput = function () {
         this.newStudent = { id: 0, firstName: '', lastName: '', state: 1 };
     };
-    ;
+    EditStudentComponent.prototype.getStudents = function () {
+        var _this = this;
+        this.studentService.getStudents().then(function (students) { return _this.studentsList = students; });
+    };
+    EditStudentComponent.prototype.ngOnInit = function () {
+        this.getStudents();
+        this.resetInput();
+    };
     EditStudentComponent = __decorate([
         core_1.Component({
             selector: 'edit-student-page',

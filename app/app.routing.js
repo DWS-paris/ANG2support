@@ -1,10 +1,9 @@
 "use strict";
 var router_1 = require('@angular/router');
-// Import des composants utilisés dans les routes
 var edit_student_component_1 = require('./components/edit.student.component');
 var dashboard_component_1 = require('./components/dashboard.component');
+var student_details_component_1 = require('./components/student.details.component');
 var appRoutes = [
-    // Définition d'une route
     {
         path: '',
         redirectTo: '/dashboard',
@@ -17,8 +16,12 @@ var appRoutes = [
     {
         path: 'edit',
         component: edit_student_component_1.EditStudentComponent
+    },
+    // Définition d'un paramêtre ID dans la route : à propos des routes dynamiques https://goo.gl/Qe53YN
+    {
+        path: 'detail/:id',
+        component: student_details_component_1.StudentDetailsComponent
     }
 ];
-// Export de la class du module de routing
 exports.Router = router_1.RouterModule.forRoot(appRoutes);
 //# sourceMappingURL=app.routing.js.map
