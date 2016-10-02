@@ -18,6 +18,7 @@ export class StudentDetailsComponent implements OnInit{
     edit = Config.EDIT;
     firstName = Config.FIRSTNAME;
     lastName = Config.LASTNAME;
+    back = Config.BACK;
     
     singleStudent: StudentItem;
 
@@ -37,5 +38,10 @@ export class StudentDetailsComponent implements OnInit{
             // Appel de la fonction du service pour afficher la vue de la route dynamique
             this.studentService.getStudent(id).then(singleStudent => this.singleStudent = singleStudent);
         })
+    }
+
+    // Création d'une fontction pour revenir en arrière
+    goBack(): void {
+        this.location.back();
     }
 }

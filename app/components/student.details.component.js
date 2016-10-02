@@ -23,6 +23,7 @@ var StudentDetailsComponent = (function () {
         this.edit = config_1.Config.EDIT;
         this.firstName = config_1.Config.FIRSTNAME;
         this.lastName = config_1.Config.LASTNAME;
+        this.back = config_1.Config.BACK;
     }
     // Création d'un fonction applée au chargelent du composant
     StudentDetailsComponent.prototype.ngOnInit = function () {
@@ -33,6 +34,10 @@ var StudentDetailsComponent = (function () {
             // Appel de la fonction du service pour afficher la vue de la route dynamique
             _this.studentService.getStudent(id).then(function (singleStudent) { return _this.singleStudent = singleStudent; });
         });
+    };
+    // Création d'une fontction pour revenir en arrière
+    StudentDetailsComponent.prototype.goBack = function () {
+        this.location.back();
     };
     StudentDetailsComponent = __decorate([
         core_1.Component({

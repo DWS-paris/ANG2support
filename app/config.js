@@ -75,6 +75,12 @@ var Config = (function () {
         configurable: true
     });
     ;
+    Object.defineProperty(Config, "BACK", {
+        get: function () { return 'Retour'; },
+        enumerable: true,
+        configurable: true
+    });
+    ;
     return Config;
 }());
 exports.Config = Config;
