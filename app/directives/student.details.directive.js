@@ -8,23 +8,19 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-// Import des composants nécessaire à la création de la directive : à propos des directives https://goo.gl/fGh7QS 
+// Création d'une directive : à propos des directives https://goo.gl/fGh7QS 
 var core_1 = require("@angular/core");
 var config_1 = require('../config');
 var student_item_1 = require("../models/student.item");
-// Configuration de la directive
 var StudentDirective = (function () {
     function StudentDirective() {
         this.editBtn = config_1.Config.EDIT_BTN;
         this.state1 = config_1.Config.STATE1;
         this.state2 = config_1.Config.STATE2;
         this.state3 = config_1.Config.STATE3;
-        // L’utilisation de la fonction de la class Output permet d'envoyer dans la directive les données vers un autre composant.
-        // La création d’un instance de EventEmitter() permet de créer un événement personnalisé.
         this.sendStudentDetail = new core_1.EventEmitter();
     }
     StudentDirective.prototype.onSelect = function (event) {
-        // La fonction .emit(…) permet de capter un événement personnalisé.
         this.sendStudentDetail.emit(this.student);
     };
     __decorate([

@@ -8,11 +8,10 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-// Import des composants nécessaire à la création de la directive : à propos des directives https://goo.gl/fGh7QS 
+// Création d'une directive : à propos des directives https://goo.gl/fGh7QS 
 var core_1 = require("@angular/core");
 var config_1 = require('../config');
 var student_item_1 = require("../models/student.item");
-// Configuration de la directive
 var EditStudentDirective = (function () {
     function EditStudentDirective() {
         this.edit = config_1.Config.EDIT;
