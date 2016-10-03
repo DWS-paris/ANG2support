@@ -1,148 +1,64 @@
 # Support de cours DWS Angular2
 
-Ce support de cours est basé sur la documentation [angular.io quickstart](https://angular.io/docs/ts/latest/quickstart.html).
-
-Repo [angular.io quickstart](https://github.com/angular/quickstart).
+Ce support de cours est basé sur la documentation [angular.io quickstart](https://angular.io/docs/ts/latest/quickstart.html). / Repo [angular.io quickstart](https://github.com/angular/quickstart).
 
 
 
-## Prerequisites
+## Supports de cours
 
-Node.js and npm are essential to Angular development. 
-    
-<a href="https://docs.npmjs.com/getting-started/installing-node" target="_blank" title="Installing Node.js and updating npm">
-Get it now</a> if it's not already installed on your machine.
- 
-**Verify that you are running at least node `v4.x.x` and npm `3.x.x`**
-by running `node -v` and `npm -v` in a terminal/console window.
-Older versions produce errors.
+<a href="https://www.evernote.com/l/AbWQazbigsZDcKO_hlzr3_1h3DIQitmj_Z4" target="_blank" title="0# Angular2 - base de travail">
+0# Angular2 - base de travail
 
-We recommend [nvm](https://github.com/creationix/nvm) for managing multiple versions of node and npm.
+<a href="https://www.evernote.com/l/AbVX2XuITlJGwK9kHi-46jlP8w41Lxzou0o" target="_blank" title="1# Configuration de la page index.html">
+1# Configuration de la page index.html
 
-## Create a new project based on the QuickStart
+<a href="https://www.evernote.com/l/AbWQZZYjFeVPpbXiree_ZW292oMR-q3gBo0" target="_blank" title="2# Composant de base ">
+2# Composant de base 
 
-Clone this repo into new project folder (e.g., `my-proj`).
-```bash
-git clone  https://github.com/angular/quickstart  my-proj
-cd my-proj
-```
+<a href="https://www.evernote.com/l/AbUfq4ybumlPuZC5TmWJr5wr7rSOXHGaIKY" target="_blank" title="3# Configuration de l'application">
+3# Configuration de l'application
 
-We have no intention of updating the source on `angular/quickstart`.
-Discard everything "git-like" by deleting the `.git` folder.
-```bash
-rm -rf .git  # non-Windows
-rd .git /S/Q # windows
-```
+<a href="https://www.evernote.com/l/AbUb7LNe1rVFdrV_lkol-mdmf8e23mmQLnY" target="_blank" title="4# Création d'un template HTML pour un coposant">
+4# Création d'un template HTML pour un coposant
 
-### Create a new git repo
-You could [start writing code](#start-development) now and throw it all away when you're done.
-If you'd rather preserve your work under source control, consider taking the following steps.
+<a href="https://www.evernote.com/l/AbXdw41vrmFEdJa7WLYWIXZMNu4u5GrG55I" target="_blank" title="5# Création d'un fichier de styles">
+5# Création d'un fichier de styles
 
-Initialize this project as a *local git repo* and make the first commit:
-```bash
-git init
-git add .
-git commit -m "Initial commit"
-```
+<a href="https://www.evernote.com/l/AbXZmv42GfhKH7dzQCxXjwwka7xKRVuk-IY" target="_blank" title="6# Définition de variables à envoyer dans la vue">
+6# Définition de variables à envoyer dans la vue
 
-Create a *remote repository* for this project on the service of your choice.
+<a href="https://www.evernote.com/l/AbWLuTVBcn1CprbyVNLGfkUHwtkg5rwCyIs" target="_blank" title="7#  *ngFor - itérations sur une collection de données">
+7#  *ngFor - itérations sur une collection de données
 
-Grab its address (e.g. *`https://github.com/<my-org>/my-proj.git`*) and push the *local repo* to the *remote*.
-```bash
-git remote add origin <repo-address>
-git push -u origin master
-```
-## Install npm packages
+<a href="https://www.evernote.com/l/AbXv3BRiuWtMTqPr9oQNYgM1eUe_TsDPatQ" target="_blank" title="8# *ngIf - Affichage conditionnel">
+8# *ngIf - Affichage conditionnel
 
-> See npm and nvm version notes above
+<a href="https://www.evernote.com/l/AbWDLEfiSZJKFItW6-meSieXvTf72cG9Ca0" target="_blank" title="9# Event binding">
+9# Event binding
 
-Install the npm packages described in the `package.json` and verify that it works:
+<a href="https://www.evernote.com/l/AbXrq41zFl5OWY4UIZat9ogRAc6-3GIT7Kc" target="_blank" title="10# ngModel - Modèle de données">
+10# ngModel - Modèle de données
 
-**Attention Windows Developers:  You must run all of these commands in administrator mode**.
+<a href="https://www.evernote.com/l/AbUhw-k_xmxGMYVyegC7mA03oxNaBPZM35E" target="_blank" title="11#Créer un model de donnée / Constructor et MVC">
+11#Créer un model de donnée / Constructor et MVC
 
-```bash
-npm install
-npm start
-```
+<a href="https://www.evernote.com/l/AbUClScbX9FJFqkvbzLFzwJMRHx-c-HUM3s" target="_blank" title="12# Créer un fichier de configuration pour l'application - Angular">
+12# Créer un fichier de configuration pour l'application - Angular
 
-> If the `typings` folder doesn't show up after `npm install` please install them manually with:
+<a href="https://www.evernote.com/l/AbVwg78jBnRADJFZwufjJGxkP6bpeZ7ImaQ" target="_blank" title="13# Les formulaires">
+13# Les formulaires
 
-> `npm run typings -- install`
+<a href="https://www.evernote.com/l/AbVCPwc9m1hLxKMRhSuvsEBGVcZ6nRFBjy0" target="_blank" title="14# Créer une directive (composant) - Abgular2">
+14# Créer une directive (composant) - Abgular2
 
-The `npm start` command first compiles the application, 
-then simultaneously re-compiles and runs the `lite-server`.
-Both the compiler and the server watch for file changes.
+<a href="https://www.evernote.com/l/AbXqDijv84FKPJ_06JOT0VVnB1s0p-0J7mg" target="_blank" title="15# Création d'un service">
+15# Création d'un service
 
-Shut it down manually with Ctrl-C.
+<a href="https://www.evernote.com/l/AbVnyuWmdEtEmr355rgZK0TU0krGgQZ5QZ0" target="_blank" title="16# Configuration des routes">
+16# Configuration des routes
 
-You're ready to write your application.
+<a href="https://www.evernote.com/l/AbXQnGIMq-hDgai2JIGMA_4u3GX4Z4_wiJU" target="_blank" title="17# Configuration des routes dynamiques">
+17# Configuration des routes dynamiques
 
-### npm scripts
-
-We've captured many of the most useful commands in npm scripts defined in the `package.json`:
-
-* `npm start` - runs the compiler and a server at the same time, both in "watch mode".
-* `npm run tsc` - runs the TypeScript compiler once.
-* `npm run tsc:w` - runs the TypeScript compiler in watch mode; the process keeps running, awaiting changes to TypeScript files and re-compiling when it sees them.
-* `npm run lite` - runs the [lite-server](https://www.npmjs.com/package/lite-server), a light-weight, static file server, written and maintained by
-[John Papa](https://github.com/johnpapa) and
-[Christopher Martin](https://github.com/cgmartin)
-with excellent support for Angular apps that use routing.
-* `npm run typings` - runs the typings tool.
-* `npm run postinstall` - called by *npm* automatically *after* it successfully completes package installation. This script installs the TypeScript definition files this app requires.
-Here are the test related scripts:
-* `npm test` - compiles, runs and watches the karma unit tests
-* `npm run e2e` - run protractor e2e tests, written in JavaScript (*e2e-spec.js)
-
-## Testing
-
-The QuickStart documentation doesn't discuss testing.
-This repo adds both karma/jasmine unit test and protractor end-to-end testing support.
-
-These tools are configured for specific conventions described below.
-
-*It is unwise and rarely possible to run the application, the unit tests, and the e2e tests at the same time.
-We recommend that you shut down one before starting another.*
-
-### Unit Tests
-TypeScript unit-tests are usually in the `app` folder. Their filenames must end in `.spec`.
-
-Look for the example `app/app.component.spec.ts`.
-Add more `.spec.ts` files as you wish; we configured karma to find them.
-
-Run it with `npm test`
-
-That command first compiles the application, then simultaneously re-compiles and runs the karma test-runner.
-Both the compiler and the karma watch for (different) file changes.
-
-Shut it down manually with Ctrl-C.
-
-Test-runner output appears in the terminal window.
-We can update our app and our tests in real-time, keeping a weather eye on the console for broken tests.
-Karma is occasionally confused and it is often necessary to shut down its browser or even shut the command down (Ctrl-C) and
-restart it. No worries; it's pretty quick.
-
-The `HTML-Reporter` is also wired in. That produces a prettier output; look for it in `~_test-output/tests.html`.
-
-### End-to-end (E2E) Tests
-
-E2E tests are in the `e2e` directory, side by side with the `app` folder.
-Their filenames must end in `.e2e-spec.ts`.
-
-Look for the example `e2e/app.e2e-spec.ts`.
-Add more `.e2e-spec.js` files as you wish (although one usually suffices for small projects);
-we configured protractor to find them.
-
-Thereafter, run them with `npm run e2e`.
-
-That command first compiles, then simultaneously starts the Http-Server at `localhost:8080`
-and launches protractor.  
-
-The pass/fail test results appear at the bottom of the terminal window.
-A custom reporter (see `protractor.config.js`) generates a  `./_test-output/protractor-results.txt` file
-which is easier to read; this file is excluded from source control.
-
-Shut it down manually with Ctrl-C.
-
-[travis-badge]: https://travis-ci.org/angular/quickstart.svg?branch=master
-[travis-badge-url]: https://travis-ci.org/angular/quickstart
+<a href="https://www.evernote.com/l/AbUb1RkhkvZBorF94uyRU42o8ZdMuIW8njQ" target="_blank" title="18# Utilisation du service HTTP">
+18# Utilisation du service HTTP
